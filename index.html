@@ -1,0 +1,397 @@
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>SEGAN: Speech Enhancement Generative Adversarial Network</title>
+    <link rel="stylesheet" href="stylesheet_interfaz_3.css">
+    <link href='http://fonts.googleapis.com/css?family=Bigshot+One' rel='stylesheet'>
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!--    <script src='scriptprincipal2.js'></script> -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf8">
+  </head>
+  <body >
+
+    <div id="contenido">
+      <header>
+        <h1>SEGAN: Speech Enhancement <br>Generative Adversarial Network</h1>
+	<h3>Santiago Pascual, Antonio Bonafonte, Joan Serrà</h3>
+
+<!--
+Add abstract, authors
+
+        <p id="texto_intro">Speech enhancement tries to reduce the
+        noise in some speech signals. We are surrounded by noise. It
+        is present in the street, in the car, in the office, etc.
+        Speech enhancement tries to reduce the noise to make it more
+        confortable to humans, but also to improve inteligibility for
+        cochlear implant users or to speech recognition systems.</p>
+
+        <p>In order to assess our technology we need your
+        cooperation to see which is the best method to remove noise
+        without introducing distorsion or artifacts. </p>
+
+-->
+	<h3>
+      This is the samples page of the SEGAN project. Our original paper can be found <a href="https://arxiv.org/abs/1703.09452">here</a>, and code is available <a href="https://github.com/santi-pdp/segan">here</a>.
+	</h3>
+      </header>
+
+
+      <table border=0 cellspacing=10 cellpadding=10>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M1</td><td>We were surprised to see the photograph.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_052.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_052.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_052.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M2</td><td>Today I couldn't run on it.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_092.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_092.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_092.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M3</td><td>There will be no repeat of that performance, that I can guarantee.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_104.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_104.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_104.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M4</td><td>Despite the result, it was still a great moment.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_128.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_128.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_128.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M5</td><td>It's too early to say whether a public inquiry would be appropriate.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_169.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_169.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_169.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M6</td><td>The sisters also became the top two players in the world.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_202.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_202.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_202.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M7</td><td>He says that he is no different from any other man.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_250.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_250.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_250.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M8</td><td>Nothing is safe.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_302.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_302.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_302.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M9</td><td>Pupils were allowed home at lunchtime.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_399.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_399.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_399.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> M10</td><td>I was in a position to challenge for this event and didn't.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p232_410.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p232_410.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p232_410.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F1</td><td>There were no casualties.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_363.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_363.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_363.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F2</td><td>Because we do not need it.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_028.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_028.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_028.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F3</td><td>Today I couldn't run on it.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_090.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_090.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_090.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F4</td><td>It opens the door to the Champions League.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_151.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_151.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_151.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F5</td><td>The weather forecast isn't good.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_155.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_155.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_155.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F6</td><td>A Labour insider said it was far too close to call.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_162.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_162.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_162.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F7</td><td>Yet it is unlikely to be either full, or final.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_167.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_167.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_167.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F8</td><td>The singer is expected to be in hospital for several days.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_230.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_230.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_230.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F9</td><td>YOU thought it was a headache.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_365.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_365.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_365.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+<tr valign="middle" align="left" style="border-bottom: 3px solid #f00;">
+<td> F10</td><td>The orchestra was already increasing the scope of its ambitions.</td><td><audio style="width:200px" controls="controls">
+<source src="audio/n/16k_p257_383.wav" type="audio/wav" />
+</audio>
+<br>[noisy]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/w/16k_p257_383.wav" type="audio/wav" />
+</audio>
+<br>[wiener]
+</td>
+<td><audio style="width:200px" controls="controls">
+<source src="audio/s/16k_p257_383.wav" type="audio/wav" />
+</audio>
+<br>[segan]
+</td>
+</tr><tr><td><br><p></p></td></tr>
+</table>
+
+
+
+
+      <br><br>
+
+        <footer>
+          <p id="pie">TALP-UPC 2017</p>
+        </footer>
+      </div>
+    </div>
+
+  </body>
+</html>
