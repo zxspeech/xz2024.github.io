@@ -23,12 +23,51 @@
 <!--                    <h3>     5 represents the speech has no degradation and no noticeable noise.</h3>-->
                     
                     
-                    <h3>
+                    <h5>
                         <!--       introduction <a href="???">here</a>, and code is available <a href="https://github.com/santi-pdp/segan">here</a>. -->
-                    </h3>
+                        Speech enhancement is one of the effective approaches in improving speech quality. Neural network models have been widely used in speech enhancement, such as recurrent neural networks (RNN), long short-term memory (LSTM), and generative adversarial networks (GANs). However, some of them either handle the speech noise removal tasks in the spectral domain or lack the waveform recovery capability. As a result, the processed speeches still include noisy signals. In this study, we propose a topology-enhanced GAN model to tackle noisy speech in an end-to-end structure. We use the topology features of speech waves as additional constraints and modify the objective function of GAN by adding a penalty term. The penalty term is a Wasserstein distance of topology features between the generated speech and the corresponding clean speech in GAN. We evaluate the proposed speech-enhanced model on the public speech data set with 56 speakers and 20 different types of noisy conditions. The experimental results indicate that the topology features improve the performance of GAN on speech enhancement in metrics of PESQ, CBAK, COVL, and SSNR. 
+                    </h5>
+
+                    <style>
+                        * {
+                          box-sizing: border-box;
+                        }
+                        
+                        .row {
+                          display: flex;
+                        }
+                        
+                        /* Create three equal columns that sits next to each other */
+                        .column {
+                          flex: 33.33%;
+                          padding: 5px;
+                        }
+                        </style>
                 </header>
+
+
+
+                <div class="row">
+                    <div class="column">
+                      <img src="imgs/fig1.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                      <img src="imgs/fig2.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                      <img src="imgs/fig3.png" alt="" style="width:100%">
+                    </div>
+                    <div class="column">
+                        <img src="imgs/fig4.png" alt="" style="width:100%">
+                      </div>
+                      <div class="column">
+                        <img src="imgs/fig5.png" alt="" style="width:100%">
+                      </div>
+                  </div>
+
+
                 
-                
+                <h3>The following speeches are the clean, noisy, SEGAN enhanced, and the proposed Topology enhanced speeches. </h3>
                 <table border=0 cellspacing=10 cellpadding=10>
                     
                     
